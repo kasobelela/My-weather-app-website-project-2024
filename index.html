@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Copperbelt Weather App</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="images/favicon.png" type="image/png" size="16x16">
+    <meta name="keywords" content="Copperbelt Weather | Copperbelt Weather Forecast" />
+    <meta name="author" content="Franco Kasobelela">
+    <meta name="description" content="Copperbelt Province Weather Application" />
+    <link rel="stylesheet" type="text/css" href="./css/fontawesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/color.css" />
+    <script type="text/javascript" src="./js/jquery.js"></script>
+</head>
+<body>
+    <main>
+        <header class="banner" id="banner">
+            <div class="banner-fader">
+                <div class="main-nav-bg">
+                    <div class="container">
+                        <nav class="main-nav">
+                            <div class="icon-logos">
+                                <a href="index.html" class="logo">
+                                   <div class="text-logo">Copperbelt<br>Province</div>
+                                </a>
+                            </div>
+                            <div class="nav-menu">
+                                <ul>
+                                    <li class="nav-item"><a href="index.html?#about">Why Us</a></li>
+                                    <li class="nav-item"><a href="index.html?#search-wrapper">Favourite Towns</a></li>
+                                    <li class="nav-item"><a href="index.html?#current-city">Your Town</a></li>
+                                    <li class="nav-item"><a href="index.html?#five-days-forecast">Five Days Forecast</a></li>
+                                    <li class="nav-item"><a href="index.html?#search-wrapper"><i class="fa fa-search search-"></i></a></li>
+                                    <li class="mob-nav-menu"><a><i class="fa fa-bars"></i></a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="banner-text-wrap">
+                            <div class="banner-text">
+                                <h2 class="banner-text-title">COPPERBELT PROVINCE WEATHER APP</h2>
+                                <p class="banner-text-desc">
+                                    Copperbelt Province is a province in Zambia which covers the mineral-rich Copperbelt.
+                                    The main cities and towns of the Copperbelt are Kitwe, Ndola, Mufulira, Luanshya, Chingola, 
+                                    Kalulushi and Chililabombwe.
+                                </p>
+                                <a href="" class="btn btn-dark">Weather Infor <i class="fa fa-paper-plane"></i></a>
+                                <a href="" class="btn btn-dark">Call Us <i class="fa fa-phone"></i></a> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="sp-manager">
+            <section class="current-city" id="current-city">
+                <div class="container">
+                    <div class="cc-text-titles">
+                        <h3 class="cc-title">WEATHER FOR YOUR DISTRICT</h3>
+                        <p class="cc-title-desc">
+                            For the most current weather conditions on the Copperbelt, you can check a local weather service, 
+                            as conditions can change rapidly. Would you like to know the forecast for a specific city or town 
+                            within the Copperbelt?
+                        </p>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="current-city-wrap row-sp-evn">
+                        <div class="current-city-card shadow">
+                            <h1 id="current-city-temp-level" class="condition-level current-city-level">0</h1>
+                            <i class="fa fa-thermometer"></i>
+                            <p class="current-city-card-desc">
+                                <strong><h4>Temperature<br> Condition</h4></strong>
+                            </p>
+                        </div>
+                        <div class="current-city-card shadow">
+                            <h1 id="current-city-windy-level" class="condition-level current-city-level">0</h1>
+                            <i class="fa fa-snowflake"></i>
+                            <p class="current-city-card-desc">
+                                <strong><h4>Wind <br> Condition</h4></strong>
+                            </p>
+                        </div>
+                        <div class="current-city-card shadow">
+                            <h1 id="current-city-humidity-level" class="condition-level current-city-level">0</h1>
+                            <i class="fa fa-cloud-sun"></i>
+                            <p class="current-city-card-desc">
+                                <strong><h4>Humidity <br> Condition</h4></strong>
+                            </p>
+                        </div>
+                        <div class="current-city-card shadow">
+                            <h1 id="current-city-cloudy-level" class="condition-level current-city-level">0</h1>
+                            <i class="fa fa-cloud-rain"></i>
+                            <p class="current-city-card-desc">
+                                <strong><h4>Cloudy <br> Condition</h4></strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="search-wrapper" id="search-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="search-themes">
+                            <h4 class="search-theme">INTERNATIONAL WEATHER SEARCH</h4>
+                            <p class="search-desc">
+                                On the Copperbelt, from May to September, the weather is much cooler and drier. 
+                                The temperatures during the day range from 20°C to 28°C (68°F to 82°F), and it 
+                                can get quite chilly in the early mornings and evenings.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row search-results">
+                        <div class="search-canvas shadow">
+                            <div class="err-display" id="err-display"></div>
+                            <form action="" method="get">
+                                <input type="text" 
+                                        name="search" 
+                                        id="search" 
+                                        class="form-control"
+                                        placeholder="City Name" />
+                                <button type="button"  
+                                        id="search-btn" 
+                                        class="form-control btn btn-dark btn-sm weather-button">
+                                        Search Conditions <i class="fa fa-search"></i>
+                                </button>
+                                <button type="button" 
+                                        id="fav-city" 
+                                        class="form-control btn btn-dark btn-sm weather-button">
+                                        Add Favourite Town  <i class="fa fa-heart"></i>
+                                </button>
+                                <button type="button" 
+                                        id="conver-units-btn" 
+                                        class="form-control btn btn-dark btn-sm weather-button">
+                                        Show Fahrenheit  <i class="fa fa-thermometer   "></i>
+                                </button>
+                                <span class="city-indicator-wrap" id="city-indicator-wrap"></span>
+                            </form>
+                        </div>
+                        <div class="searched-canvas">
+                            <div class="result">
+                                <i class="fa fa-thermometer  "></i>
+                                <strong>Temperature<br>Level</strong>
+                                <span id="temp-level" class="condition-level"><span id="changeable-temp">0</span></span>
+                            </div>
+                            <div class="result">
+                                <i class="fa fa-snowflake"></i>
+                                <strong>WindSpeed <br>Level</strong>
+                                <span id="windy-level" class="condition-level">0</span>
+                            </div>
+                            <div class="result">
+                                <i class="fa fa-cloud"></i>
+                                <strong>Cloudy<br>Level</strong>
+                                <span id="cloudy-level" class="condition-level">0</span>
+                            </div>
+                            <div class="result">
+                                <i class="fa fa-cloud-rain"></i>
+                                <strong>Pressure<br>Level</strong>
+                                <span id="pressure-level" class="condition-level">0</span>
+                            </div>
+                            <div class="result">
+                                <i class="fa fa-cloud-sun"></i>
+                                <strong>Humidity<br>Level </strong>
+                                <span id="humidity-level" class="condition-level">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="about-wrap" id="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 about-desc shadow   ">
+                            <div class="about-dsc-text" style="color:white;">
+                                <h2><strong>Why Choose Our Weather App?</strong></h2>
+                                Wind or snow, we’ve got you covered,
+                                Every forecast, like no other!
+                                Keep it close, in your pocket too,
+                                The weather’s perfect, just for you!
+                                <br>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 about-socials">
+                            <div class="about-social-icons">
+                                <i class="fab fa-facebook"></i>
+                                <i class="fab fa-whatsapp"></i>
+                                <i class="fab fa-google"></i>
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="services sect-pd" id="five-days-forecast">
+                <div class="container">
+                    <div class="hd-text-title">
+                        <h3 class="hd-title">WEATHER FORECAST - FOR FIVE GOOD DAYS</h3>
+                        <p class="hd-title-desc">
+                            Got your day ahead, what’s the weather say?
+                            Open up the app, it’s just a tap away!
+                            Rain or shine, we’ll help you plan.
+                        </p>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row justify-content-center" id="five-day-focus-wrapper"></div>
+                </div>
+            </section>
+            <footer class="footer-wraper">
+                <div class="footer-fader">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-center">
+                                <div class="footer-contact" style="margin-bottom:20%;">
+                                    <h6>MAIN INFORMATION</h6>
+                                    <ul class="list-group">
+                                        <li class="nav-item"><a href="index.html?#about">Why Us</a></li>
+                                        <li class="nav-item"><a href="index.html?#search-wrapper">Favourite Towns</a></li>
+                                        <li class="nav-item"><a href="index.html?#current-city">Your Town</a></li>
+                                        <li class="nav-item"><a href="index.html?#five-days-forecast">Five Days Forecast</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-center">
+                                <div class="footer-contact" style="margin-bottom:20%;">
+                                    <h6>POPULAR CONDITIONS</h6>
+                                    <ul class="list-group">
+                                        <li class="nav-item-2"><a href="index.html?#marketeers">Rainfall</a></li>
+                                        <li class="nav-item-2"><a href="index.html?#marketeers"></a>Clear Skies</li>
+                                        <li class="nav-item-2"><a href="index.html?#marketeers">Cloudy Skies</a></li>
+                                        <li class="nav-item-2"><a href="index.html?#marketeers">Sunny Skies</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-center">
+                                <div class="footer-contact">
+                                    <h6>ZRDC</h6>
+                                    <ul class="list-group"> 
+                                        <li class="nav-item"><a href="https://www.icuzambia.net">ICU Zambia</a></li>
+                                        <li class="nav-item"><a href="https://www.zrdc.org">ZRDC</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="row salutation">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                <div class="signature text-center">
+                                    &copy;2024.All Rights Reserved. Designed And Developed By Franco Kasobelela, SIN: 1907224258, BSc. Information Communications and Technology in Software Engineering
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+    <div class="nav-menu-slide">
+        <div class="nm-slide-title row-sp-btn">
+            <h4><strong>MENU</strong></h4>
+            <span class="exit-slide-menu">x</span>
+        </div>
+        <ul>
+            <li class="nav-item-2"><a href="index.html?#about">Why Us</a></li>
+            <li class="nav-item-2"><a href="index.html?#weather-conditions">Favourite Towns</a></li>
+            <li class="nav-item-2"><a href="index.html?#current-city">Your Town</a></li>
+            <li class="nav-item-2"><a href="index.html?#five-days-forecast">Five Days Forecast</a></li>
+        </ul>
+    </div>
+    <script src="./js/menu.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        //User current city information
+        let coords = {
+            "lat":"",
+            "lng":"",
+            "city":""
+        };
+
+        //get user current city details
+        $.ajax({
+            type: "GET",
+            url: "https://geolocation-db.com/json/",
+            async: true,
+            success: function(data){
+                let location = JSON.parse(data);
+                coords.lat = location.latitude;
+                coords.lng = location.longitude;
+                coords.city = location.city;
+                //wait five seconds for API load
+                setTimeout(() => {
+                    currentCityWeather();
+                    fiveDayWeatherForecast(coords);
+                }, 5000);
+            },                     
+            error: function(err){
+                $("#err-display").html("<div class='err-notice-bad'>Poor network connectivity, failed to fetch weather updates, refresh.</div>");      
+            } 
+        });  
+
+        //Update background image depending on weather for the city
+        function dynamicWeatherBackground(weatherCondition){
+            switch(weatherCondition){
+                case "Clear":
+                    console.log("Condition is clear");
+                    $("#banner").css("background-image", 'url("./images/banners/clear.jpg")');
+                    break;
+
+                case "Clouds":
+                    console.log("Condition is Clouds");
+                    $("#banner").css("background-image", 'url("./images/banners/cloudy.jpg")');
+                    break;
+
+                case "Rain":
+                    console.log("Condition is Rain");
+                    $("#banner").css("background-image", 'url("./images/banners/rain.jpg")');
+                    break;
+                default:
+                    console.log("Condition is Default");
+
+                    $("#banner").css("background-image", 'url("./images/banners/clear.jpg")');
+                    break;
+            }
+        }
+        //Fetch weather information for user current city using openWeatherMap
+        function currentCityWeather(){
+            const lat = coords.lat;
+            const lng = coords.lng;
+            const current_city = coords.city;
+            if(lat!="" && lng!=""){
+                $.ajax({
+                    type: "GET",
+                    url: "https://api.openweathermap.org/data/3.0/onecall?lat="+lat+"&lon="+lng+"&appid=b0fbe96cfe47ba62973a33ed3abfb1f1",
+                    async: true,
+                    success: function(r){
+                        if(r["current"]["temp"]!="" && r["current"]["clouds"]!="" && r["timezone"]!="") {
+                            $("#temp-level").html("<span id='searched-city-temp'><span id='changeable-temp'>"+r["current"]["temp"]+"</span><sup>o</sup>C</span>");
+                            $("#cloudy-level").html("<span>"+r["current"]["clouds"]+"<sup>oktas</sup></span>");
+                            $("#pressure-level").html("<span>"+r["current"]["pressure"]+"<sup>atm</sup></span>");
+                            $("#humidity-level").html("<span>"+r["current"]["humidity"]+" g/m<sup>2</sup</span>");
+                            $("#windy-level").html("<span>"+r["current"]["wind_deg"]+"<sup>km/h</sup</span>");
+                            let cityNameArr = r["timezone"].split("/");
+                            $(".city-indicator-wrap").html(cityNameArr[1]+" City Weather Information");
+                            $("#err-display").hide(200);
+
+                            $("#current-city-temp-level").html("<span><span id='changeable-temp-2'>"+r["current"]["temp"]+"</span><sup>o</sup>C</span>");
+                            $("#current-city-cloudy-level").html("<span>"+r["current"]["clouds"]+"<sup>oktas</sup></span>");
+                            $("#current-city-pressure-level").html("<span>"+r["current"]["pressure"]+"<sup>atm</sup></span>");
+                            $("#current-city-humidity-level").html("<span>"+r["current"]["humidity"]+" g/m<sup>2</sup></span>");
+                            $("#current-city-windy-level").html("<span>"+r["current"]["wind_deg"]+"<sup>km/h</sup></span>");
+                            dynamicWeatherBackground(r["current"]["weather"][0]["main"]);
+                        } else {
+                            $("#err-display").html("<div class='err-notice'>Failed to fetch weather updates, refresh.</div>");
+                        }
+                    }
+                });  
+            } else $("#err-display").html("<div class='err-notice'>Please wait, loading weather for current city</div>");
+        }
+        currentCityWeather(coords);
+
+        //Get weather updates for the next consecutive 5 days
+        function fiveDayWeatherForecast(coords){
+            const lat = coords.lat;
+            const lng = coords.lng;
+            const current_city = coords.city;
+            if(lat!="" && lng!=""){
+                $.ajax({
+                    type: "GET",
+                    url: "https://api.openweathermap.org/data/3.0/onecall?lat="+lat+"&lon="+lng+"&appid=b0fbe96cfe47ba62973a33ed3abfb1f1",
+                    async: true,
+                    beforeSend:function(){
+                    },
+                    success: function(r){
+                        let focus = r.daily;
+                        let focus_view = "";
+                        for (const day in focus) {
+                            var focusDate = new Date(focus[day]["dt"] * 1000).toDateString();
+                            focus_view+='<div class="vb-card-service col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"><div class="icons"></div><h5 class="service-name-desc"><div class="service-title">'+focusDate+'</div><h5 class="five-day-desc" style="text-align:center;">'+focus[day]["summary"]+'</h5><div class="service-desc" style="text-align: center;"><span class="five-day-update"></span><span class="five-day-update"></span><span class="five-day-update"></div></h5></div>';
+                        }
+                        $("#five-day-focus-wrapper").html(focus_view);
+                    }
+                });  
+            } else $("#err-display").html("<div class='err-notice'>Please wait, loading weather for current city</div>");
+        }
+
+        //Save cityname and weather condition in web browser local storage API
+        $(function(){
+            $("#fav-city").click(function(){
+                //Check if browser supports Local Storage or Not
+                const isCityReady = $("#city-indicator-wrap").val();
+                const cityTemp = $("#searched-city-temp").val();
+                if(isCityReady!=""){
+                    if(typeof(Storage)){
+                        localStorage.setItem("1", isCityReady+" is "+cityTemp + "Celsius");
+                    } else $("#err-display").html("<div class='err-notice'>This browser does not support local storage, update or use another browser like Operamini, Firefox or Google Chrome</div>");
+                } else $("#err-display").html("<div class='err-notice'>You can only save a city after searching</div>");          
+            });
+        });
+    
+        //Change temperature from celsius to fahrenheit
+        $(function(){
+            $("#conver-units-btn").click(function(){
+                let cityCurrTemp = $("#changeable-temp").text();
+                if(cityCurrTemp!=""){
+                    let f = (cityCurrTemp * (9/5)) + 32;
+                    const fahrenheit = Math.round(f,2);
+                    $("#temp-level").html("<span><span class='changeable-temp'>"+fahrenheit+"</span><sup>o</sup>F</span>");
+                    $("#current-city-temp-level").html("<span><span class='changeable-temp'>"+fahrenheit+"</span><sup>o</sup>F</span>");
+                    $("#err-display").html("<div class='err-notice'>Temperature Units Converted</div>");
+                    $("#err-display").fadeOut(5000);
+                } else $("#err-display").html("<div class='err-notice'>Can only convert if temperature is given</div>");  
+                                   
+            });
+        });
+       
+        //Search weather updates for a city
+        $(function(){
+            $("#search-btn").click(function(){
+                const cityNameq = $("#search").val();        
+                if(cityNameq!=""){
+                    $.ajax({
+                        type: "GET",
+                        url: "https://api.openweathermap.org/data/2.5/weather?q="+cityNameq+"&appid=b0fbe96cfe47ba62973a33ed3abfb1f1               ",
+                        async: true,
+                        success: function(r){
+                            console.log(r);
+                            if(r["main"]["temp"]!="" && r["clouds"]["all"]!="" && r["timezone"]!="") {
+                                $("#temp-level").html("<span id='searched-city-temp'><span class='changeable-temp'>"+r["main"]["temp"]+"</span><sup>o</sup>C</span>");
+                                $("#cloudy-level").html("<span>"+r["clouds"]["all"]+"<sup>oktas</sup></span>");
+                                $("#pressure-level").html("<span>"+r["main"]["pressure"]+"<sup>atm</sup></span>");
+                                $("#humidity-level").html("<span>"+r["main"]["humidity"]+"g/m<sup>2</sup></span>");
+                                $("#windy-level").html("<span>"+r["wind"]["deg"]+"<sup>km/h</sup></span>");
+                                dynamicWeatherBackground(r["current"]["weather"][0]["main"]);
+                                let cityNameSearched = r["name"];
+                                $(".city-indicator-wrap").html("Weather For: "+cityNameSearched);
+                                $("#err-display").hide(200);
+                            } else {
+                                $("#err-display").html("<div class='err-notice'>Check city name, or network, failed to fetch weather updates, refresh.</div>");
+                            }
+                        },
+                        error: function(err){
+                            $("#err-display").html("<div class='err-notice-bad'>Poor network connectivity, failed to fetch weather updates, refresh.</div>");      
+                        } 
+                    });  
+                } else $("#err-display").html("<div clas='err-notice'>Enter City Name To Search</div>");
+            });
+        });
+    </script>
+</body>
+</html>
